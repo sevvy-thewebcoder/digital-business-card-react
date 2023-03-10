@@ -1,0 +1,238 @@
+:root {
+
+  /* Color-schemes */
+  --bgColor-body: #23252C;
+  --bgColor-cardBody: #1A1B21;
+  --bgColor-cardFooter: #161619;
+  --bgColor-button-light: #ffffff;
+  --bgColor-button-special: #5093E2;
+  --bgColor-iconFooter: #cfcfcf;
+  --colorIcon-cardFooter: #161619;
+  --colorText-special: rgb(254, 235, 124);
+  --colorText-light: #ffffff;
+  --colorText-dark: #374151;
+  --colorText-gray: #dcdcdc;
+  --colorText-grayLight: #f5f5f5;
+
+  /* Typography */
+
+  --ff-headings: 'Tenor Sans', sans-serif;
+  --ff-bodyText: 'Barlow', sans-serif;
+  --fs--h1: clamp(2rem, 10vw, 4rem);
+  --fs--h2: clamp(1.6rem, 5vw, 2.5rem);
+  --fs--h4: clamp(1.4rem, 4.5vw, 2rem);
+  --fs--linkText: clamp(1.2rem, 3.8vw, 1.8rem);
+  --fs--bodyText: clamp(1.5rem, 3.8vw, 1.6rem);
+  --fs--contactLinks: clamp(1.4rem, 3.8vw, 1.8rem);
+
+
+  /* Spacing */
+
+  --gap-1: clamp(1.5rem, 3vw, 3em);
+}
+
+#root {
+  max-width: 540px;
+  margin: 0 auto;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.App {
+  background-color: var(--bgColor-cardBody);
+  color: var(--colorText-light);
+  height: 100%;
+
+}
+
+h1.user--name,
+h2.section--title,
+h4.user--role,
+a > span.user--link-text {
+  font-family: var(--ff-headings);
+}
+
+h1.user--name,
+h2.section--title,
+h4.user--role {
+  color: var(--colorText-grayLight);
+}
+
+
+/**
+  Card--Header Section
+*/
+
+.card--header {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+
+.card--header > .image--container {
+  height: clamp(150px, 70vw, 375px);
+}
+
+.card--header .image--profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.card--header .user--profile {
+  padding: clamp(0.5rem, 1.5vw, 2%) clamp(1.5rem, 10vw, 12%);
+  text-align: center;
+}
+
+.card--header h1.user--name {
+  font-size: var(--fs--h1);
+}
+
+.card--header h4.user--role {
+  font-size: var(--fs--h4);
+  color: var(--colorText-special);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.card--header a.user--website {
+  font-size: var(--fs--linkText);
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  line-height: 1;
+  width: fit-content;
+  width: --moz-fit-content;
+  width: --webkit-fit-content;
+  margin-inline: auto;
+  transition: color 0.3s ease;
+}
+
+.card--header a.user--website:hover {
+  color: #92c3fc;
+}
+
+.card--header 
+a.user--website 
+i.fa-globe {
+  align-self: center;
+}
+
+.card--header
+a.user--website
+.web--address {
+  margin-top: -0.15rem;
+}
+
+.card--header .user--links-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.7rem;
+  margin-top: clamp(1.5rem, 5vw, 3rem);
+}
+
+.card--header 
+.user--links-container > a {
+  flex-grow: 1;
+  flex-basis: 0;
+  font-size: var(--fs--contactLinks);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  background-color: var(--bgColor-button-light);
+  color: var(--colorText-dark);
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.card--header 
+.user--links-container > a:hover {
+  background-color: gold;
+  color: var(--colorText-dark);
+}
+
+.card--header 
+a.user--link-linkedin {
+  background-color: var(--bgColor-button-special);
+  color: var(--colorText-light);
+}
+
+/**
+  Card--Body Section
+*/
+
+.card--main-content {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+  padding: clamp(3rem, 5vw, 8%) clamp(1.5rem, 10vw, 12%) clamp(3.5rem, 5vw, 12%);
+}
+
+.card--main-content section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card--main-content 
+section h2.section--title {
+  font-size: var(--fs--h2);
+}
+
+.card--main-content 
+section p.section--description {
+  font-size: var(--fs--bodyText);
+  text-align: justify;
+  color: var(--colorText-gray);
+}
+
+
+/**
+  Card--Footer Section
+*/
+
+.card--footer {
+  height: clamp(75px, 10vw, 85px);
+  background-color: var(--bgColor-cardFooter);
+  padding: clamp(1rem, 2vw, 2rem) clamp(2rem, 2.5vw, 3.5rem);
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.card--footer > .footer--links {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.follow--link {
+  justify-self: center;
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.card--footer i.fa-brands {
+  font-size: 2rem;
+  padding: 0.3em;
+  border-radius: 5px;
+  color: var(--colorIcon-cardFooter);
+  background-color: var(--bgColor-iconFooter);
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.card--footer
+i.fa-brands:hover {
+  font-size: 2.3rem;
+  background-color: gold;
+}
