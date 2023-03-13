@@ -70,10 +70,14 @@ h4.user--role {
   display: flex;
   flex-direction: column;
   gap: var(--gap-1);
+  padding: clamp(1.5rem, 7vw, 10%);
 }
 
 .card--header > .image--container {
   height: clamp(150px, 70vw, 375px);
+  border-radius: 10px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
 }
 
 .card--header .image--profile {
@@ -84,7 +88,6 @@ h4.user--role {
 }
 
 .card--header .user--profile {
-  padding: clamp(0.5rem, 1.5vw, 2%) clamp(1.5rem, 7vw, 10%);
   text-align: center;
 }
 
@@ -235,4 +238,77 @@ section p.section--description {
 i.fa-brands:hover {
   font-size: 2.3rem;
   background-color: gold;
+}
+
+@media screen and (min-width: 768px) {
+
+  #root {
+    max-width: 1080px;
+  }
+
+  .card--header,
+  .card--main-content {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--gap-1);
+  }
+
+  .card--header > .image--container,
+  .card--header .user--profile,
+  .card--main-content section {
+    width: clamp(150px, 50vw, 48%);
+    height: clamp(150px, 30vw, 300px);
+    border-radius: 5px;
+    background-color: var(--bgColor-cardFooter);
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+  }
+  
+  .card--header {
+    padding:  clamp(1.5rem, 4vw, 5%) 
+              clamp(1.5rem, 4vw, 10%) 
+              clamp(1.5rem, 4vw, 2%);
+  }
+  
+  .card--header .user--profile {
+    padding: clamp(1.5rem, 7vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card--header h1.user--name {
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  
+
+  /**
+  Card--Body Section
+  */
+
+  .card--main-content {
+    padding:  clamp(1.5rem, 2vw, 2.5rem) 
+              clamp(1.5rem, 4vw, 10%) 
+              clamp(4rem, 5vw, 7%);
+  }
+
+  .card--main-content 
+  section {
+    padding: clamp(2rem, 4vw, 10rem) clamp(1.5rem, 3vw, 4rem);
+    gap: clamp(1.4rem, 2vw, 2rem);
+  }
+
+  .card--main-content 
+  section h2.section--title {
+    font-size: var(--fs--h2);
+  }
+
+  .card--main-content 
+  section p.section--description {
+    font-size: var(--fs--bodyText);
+    text-align: justify;
+    color: var(--colorText-gray);
+  }
+
 }
